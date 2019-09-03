@@ -9,23 +9,26 @@ npm i vue-apng
 ```
 
 ```js
-import Apng from 'vue-apng'
+import VueApng from 'vue-apng'
 
-Vue.use(Apng)
+Vue.use(VueApng)
 ```
 
 or
 
 ```
-import Apng from 'vue-apng'
+import VueApng from 'vue-apng'
 
 new Vue({
   components: {
-    Apng,
+    VueApng,
   }
 })
 ```
 
 ```html
-<apng class="apng" src="imgUrl"></apng>
+<vue-apng class="apng" src="imgUrl"></vue-apng>
 ```
+
+License
+MIT

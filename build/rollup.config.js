@@ -5,10 +5,16 @@ import { terser } from "rollup-plugin-terser"
 import babel from 'rollup-plugin-babel'
 import bundleSize from 'rollup-plugin-filesize'
 
+const path = require('path')
+
+const resolveFile = function (filePath) {
+  return path.join(__dirname, '..', filePath)
+}
+
 module.exports = {
-  input: 'src/index.js',
+  input: resolveFile('src/index.js'),
   output: {
-    file: 'dist/index.js',
+    file: resolveFile('dist/index.js'),
     format: 'umd',
     name: 'VueApng'
   },
