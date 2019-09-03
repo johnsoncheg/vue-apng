@@ -3,25 +3,39 @@ import vue from 'rollup-plugin-vue'
 import commonjs from 'rollup-plugin-commonjs'
 import { terser } from "rollup-plugin-terser"
 import babel from 'rollup-plugin-babel'
+import bundleSize from 'rollup-plugin-filesize'
 
 module.exports = {
-  input: './src/index.js',
+  input: 'src/index.js',
   output: {
-    file: 'dist/bundle.js',
-    format: 'esm',
+    file: 'dist/index.js',
+    format: 'umd',
     name: 'VueApng'
   },
 
   plugins: [
-    vue(),
+    vue({
+      template: {
+        isProduction: true
+      }
+    }),
+    bundleSize(),
     resolve({
       browser: true,
-      jsnext: true,
-      modulesOnly: true
+      modulesOnly: true,
+      extensions: ['.js', '.vue']
     }),
     commonjs(),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      presets: [
+        ['@babel/preset-env', { modules: false }]
+      ],
+      plugins: [
+        ["@babel/plugin-transform-classes", {
+          "loose": true
+        }]
+      ]
     }),
     terser()
   ]

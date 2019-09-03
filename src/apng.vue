@@ -1,6 +1,5 @@
 <template>
-  <div class="apng-wrapper"
-    :style="{ width, height }">
+  <div class="apng-wrapper">
     <template v-if="imgSrc">
       <img :src="imgSrc" v-if="supported">
       <canvas ref='c' v-else></canvas>
@@ -18,15 +17,7 @@ export default {
   name: 'v-apng',
   props: {
     src: [String, HTMLImageElement],
-    ignore: Boolean,
-    width: {
-      type: String,
-      required: true
-    },
-    height: {
-      type: String,
-      default: 'auto'
-    }
+    ignore: Boolean
   },
 
   data () {

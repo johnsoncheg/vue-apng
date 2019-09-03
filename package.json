@@ -2,7 +2,7 @@
   "name": "vue-apng",
   "version": "1.0.0",
   "description": "a vue component for compatible apng",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && rollup -c"
@@ -18,10 +18,12 @@
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
+    "@babel/plugin-transform-classes": "^7.5.5",
     "@babel/preset-env": "7.4.5",
     "rollup": "^1.20.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^6.2.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-vue": "^5.0.1",
