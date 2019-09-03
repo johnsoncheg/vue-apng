@@ -2,11 +2,13 @@
 
 a vue component for showing animating png.
 
-# install
+# Install
 
 ```bash
 npm i vue-apng
 ```
+
+# Usage
 
 ```js
 import VueApng from 'vue-apng'
@@ -29,6 +31,3 @@ new Vue({
 ```html
 <vue-apng class="apng" src="imgUrl"></vue-apng>
 ```
-
-License
-MIT
